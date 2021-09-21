@@ -1,77 +1,40 @@
-
-import './App.css';
-import {Container} from "@material-ui/core"
-import { GoogleLogin } from 'react-google-login';
-import { useState } from 'react';
-import env from "react-dotenv";
-
-import GooglePicker from "react-google-picker";
-
-const scope = [
-  "https://www.googleapis.com/auth/drive.readonly",
-  "https://www.googleapis.com/auth/drive.photos.readonly"
-];
-
+import "./App.css";
+import { Container } from "@material-ui/core";
+import { Tab } from "semantic-ui-react";
+import "semantic-ui-css/semantic.min.css";
+import { GoogleDrive } from "./containers/googleDrive";
+import { Header, Icon } from "semantic-ui-react";
 
 function App() {
-
-  const [profile,setProfile]=useState(false);
-
-// const responseGoogle = (response) => {
-//   console.log(response);
-//   console.log(response.profileObj);
-//   if(response.profileObj !== undefined){
-//     setProfile(true);
-//   }
-// }
-
-
   return (
     <Container>
-      
-      {/* {!profile ?
-       <GoogleLogin
-    clientId={CLIENT_ID}
-    buttonText="Login"
-    onSuccess={responseGoogle}
-    onFailure={responseGoogle}
-    cookiePolicy={'single_host_origin'}
-  />
-  : "Thala"} */}
+      <Header as="h2" icon textAlign="center">
+        <Icon name="cloud upload" color="orange" circular />
+        <Header.Content>OAuth Application</Header.Content>
+      </Header>
 
-<GooglePicker
-        clientId={env.CLIENT_ID}
-        developerKey={env.API_KEY}
-        scope={scope}
-        // onAuthFailed={this.onAuthFail}
-        navHidden
-        mimeTypes={["image/png", "image/jpeg", "image/jpg"]}
-        createPicker={(google, oauthToken) => {
-          const picker = new google.picker.PickerBuilder()
-            .addView(new google.picker.View(google.picker.ViewId.DOCS_IMAGES))
-            .addView(new google.picker.DocsUploadView())
-            .setOAuthToken(oauthToken)
-            .setDeveloperKey(env.API_KEY)
-            .setAppId(env.APP_ID)
-            .setCallback((data) => {
-              if (data.action === google.picker.Action.PICKED) {
-                var fileId = data.docs[0].id;
-                alert("The user selected: " + fileId);
-              }
-            })
-            .enableFeature(google.picker.Feature.NAV_HIDDEN)
-            .enableFeature(google.picker.Feature.MULTISELECT_ENABLED);
-
-          picker.build().setVisible(true);
-        }}
-      >
-        <button>
-         Continue with google
-        </button>
-      </GooglePicker>
-
-
-
+      <Tab
+        menu={{ secondary: true, pointing: true }}
+        color="orange"
+        panes={[
+          {
+            menuItem: "Google Drive",
+            render: () => (
+              <Tab.Pane>
+                <GoogleDrive />
+              </Tab.Pane>
+            ),
+          },
+          {
+            menuItem: "LinkedIn",
+            render: () => (
+              <Tab.Pane>
+                <GoogleDrive />
+              </Tab.Pane>
+            ),
+          },
+        ]}
+      />
     </Container>
   );
 }

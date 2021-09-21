@@ -7,7 +7,7 @@ window.env = {
   "npm_config_metrics_registry": "https://registry.npmjs.org/",
   "TMPDIR": "/var/folders/wd/wn4n4nhd7zb8lc2lrqdhtj6r0000gn/T/",
   "CONDA_SHLVL": "1",
-  "TERM_PROGRAM_VERSION": "1.60.0",
+  "TERM_PROGRAM_VERSION": "1.60.1",
   "CONDA_PROMPT_MODIFIER": "(base) ",
   "ORIGINAL_XDG_CURRENT_DESKTOP": "undefined",
   "COLOR": "1",
@@ -16,7 +16,7 @@ window.env = {
   "COMMAND_MODE": "unix2003",
   "npm_config_globalconfig": "/Users/test/.npm-global/etc/npmrc",
   "CONDA_EXE": "/Users/test/Documents/anaconda3/bin/conda",
-  "SSH_AUTH_SOCK": "/private/tmp/com.apple.launchd.ZpsYpgLU8V/Listeners",
+  "SSH_AUTH_SOCK": "/private/tmp/com.apple.launchd.koyFJnXbue/Listeners",
   "__CF_USER_TEXT_ENCODING": "0x1F5:0:15",
   "npm_execpath": "/usr/local/lib/node_modules/npm/bin/npm-cli.js",
   "_CE_CONDA": "",
@@ -54,7 +54,8 @@ window.env = {
   "npm_node_execpath": "/usr/local/bin/node",
   "npm_config_prefix": "/Users/test/.npm-global",
   "COLORTERM": "truecolor",
-  "API_KEY": "j_aCNL8HgQwDdfH_UPy_lhbQ",
+  "API_KEY": "AIzaSyDfXXj9Zo8dF8meha2DtZy_DV1D9ccVMqs",
   "CLIENT_ID": "401119320452-0uiamn21n6eqc7hsv1v5u519ietba4mo.apps.googleusercontent.com",
-  "APP_ID": "\"ssd-assignment-325713\";"
+  "APP_ID": "\"ssd-assignment-325713\";",
+  "API_NEW": "\"AIzaSyDfXXj9Zo8dF8meha2DtZy_DV1D9ccVMqs"
 };
