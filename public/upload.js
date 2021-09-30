@@ -5,13 +5,13 @@ $(document).ready(function(){
     const code = urlParams.get('code');
 	
 	//generated client id
-    var client_id = "349805278143-c2vi2ruhvv8032fq9558sr111ohbn6pp.apps.googleusercontent.com";
+    var client_id = "401119320452-0uiamn21n6eqc7hsv1v5u519ietba4mo.apps.googleusercontent.com";
 	
 	 //url set for the redirection in google console
     const redirect_uri = "http://localhost:3000/upload.html";
 	
 	 //secret key generated at the time of application creation
-    const client_secret = "9uXTygPgsHcmMLH7NsU_Gvhk";
+    const client_secret = "j_aCNL8HgQwDdfH_UPy_lhbQ";
 	
 	//invoking url for google drive Resource Server
     const scope = "https://www.googleapis.com/auth/drive";
@@ -42,9 +42,7 @@ $(document).ready(function(){
         }
   });
 
-    function stripQueryStringAndHashFromPath(url) {
-        return url.split("?")[0].split("#")[0];
-    }   
+
 
     var Upload = function (file) {
         this.file = file;
