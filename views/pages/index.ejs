@@ -1,49 +1,40 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Linkedin Node Authentication</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-  <style>
-    .linkedin {
-      background-color: #0073b1 !important;
-      color: #fff !important;
-    }
-    .fa-linkedin-f:before,
-    .fa-linkedin:before {
-      content: "\f0e1";
-    }
-  </style>
+    <title>ExpressJS: Linkedin share</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/style.css" type="text/css" media="screen">
 </head>
-
 <body>
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Node Authentication</a>
-    </div>
-  </nav>
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <div class="row center">
-        <div class="col s6 offset-s3">
-          <div class="card">
-            <div class="card-content">
-              <span class="card-title">Linkedin Login using Node and passport</span>
+<main id="site">
+    <% if(!isAuthorized) { %>
+        <p class="text-center">
+            <a href="/auth" class="btn btn-primary btn-lg">Signin with Linkedin</a>
+        </p>
+    <% } else { %>
+        <form action="" method="post" id="share-form">
+            <div class="form-group mb-5">
+                <input type="text" name="title" id="title" placeholder="Title" class="form-control"> 
             </div>
-            <div class="card-action">
-              <a href="/auth/linkedin" class="waves-effect waves-light btn social linkedin">
-                <i class="fa fa-linkedin"></i> Sign in with Linkedin
-              </a>
+            <div class="form-group mb-5">
+                <input type="text" name="url" id="url" placeholder="Share URL" class="form-control"> 
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            <div class="form-group mb-5">
+                <input type="text" name="thumb" id="thumb" placeholder="Share thumbnail URL" class="form-control"> 
+            </div>
+            <div class="form-group">
+                <textarea name="text" id="text" placeholder="Text" class="form-control"></textarea>
+            </div>
+            <p class="mt-5">
+                <input type="hidden" name="id" value="<%= id %>">
+                <input type="submit" value="Share" class="btn btn-primary btn-lg">
+            </p>
+        </form>
+    <% } %>
+</main>
+<script src="/public/js/jquery.min.js"></script>
+<script src="/public/js/index.js"></script>
 </body>
-
 </html>
