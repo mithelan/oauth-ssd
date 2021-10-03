@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ExpressJS: Linkedin share</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/css/style.css" type="text/css" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
+</head>
+
+<body style="background-color: #dfe8e1;">
+    <main id="site">
+            <div>
+                <h1 style="color: #2867b2; font-weight: bold;">Share your Post to LinkedIn</h1>
+                <div>
+                    <form action="/profile" method="post" id="share-form" class="mt-5">
+                        <div class="form-group mb-4">
+                            <input type="text" name="title" id="title" style="width: 35%; text-align:center;" placeholder="Title" class="form-control">
+                        </div>
+                        <div class="form-group mb-4">
+                            <input type="text" name="url" id="url" style="width: 35%; text-align:center"  placeholder="Share URL" class="form-control">
+                        </div>
+                        <div class="form-group mb-4">
+                            <input type="text" name="thumb" id="thumb" style="width: 35%; text-align:center"  placeholder="Share thumbnail URL" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="7" name="text" id="text" placeholder="Text" style="width: 35%; text-align:center;"  class="form-control"></textarea>
+                        </div>
+                        <p class="mt-5">
+                            <input type="hidden" name="id" value="<%= id %>">
+                            <input type="submit" value="Share Post" class="btn btn-primary btn-lg" style="background-color: #2867b2
+                            ; border-radius:0">
+                        </p>
+                    </form>
+                </div>
+            </div>
+    </main>
+    <script src="/public/js/jquery.min.js"></script>
+    <script src="/public/js/index.js"></script>
+
+</body>
+
+</html>
