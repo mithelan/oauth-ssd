@@ -9,12 +9,7 @@
 </head>
 <body>
 <main id="site">
-    <% if(!isAuthorized) { %>
-        <p class="text-center">
-            <a href="/auth" class="btn btn-primary btn-lg">Signin with Linkedin</a>
-        </p>
-    <% } else { %>
-        <form action="" method="post" id="share-form">
+        <form method="post" id="share-form">
             <div class="form-group mb-5">
                 <input type="text" name="title" id="title" placeholder="Title" class="form-control"> 
             </div>
@@ -32,7 +27,6 @@
                 <input type="submit" value="Share" class="btn btn-primary btn-lg">
             </p>
         </form>
-    <% } %>
 </main>
 <script src="/public/js/jquery.min.js"></script>
 <script src="/public/js/index.js"></script>
