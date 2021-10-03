@@ -51,7 +51,7 @@ app.get('/',function(req,res){
 
 app.use('/', routes);
 
-const port = 3001;
+const port = 3000;
 
 app.listen(port, () => {
   console.log('App listening on port ' + port);
