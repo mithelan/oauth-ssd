@@ -11,7 +11,7 @@ router.use(bodyParser.urlencoded({ extended: true}));
 
 
 router.get('/profile', async (req, res) => {
-    const isAuthorized =req.session;
+    const isAuthorized =req.session.authorized;
     if(!isAuthorized) {
         res.render('index', { isAuthorized, id: '' });
     } else {
@@ -39,8 +39,8 @@ router.get('/auth/linkedin/callback', async (req, res) => {
         if(data.access_token) {
             req.session.token = data.access_token;
             req.session.authorized = true;
-        }
-        
+          }
+          
         res.redirect('/profile');
     } catch(err) {
         res.json(err);
