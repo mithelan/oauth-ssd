@@ -1,7 +1,7 @@
 "use strict";
 
 $(function() {
-    $( "#share-form" ).on( "submit", function( e ) {
+    $("#share-form" ).on( "submit", function( e ) {
         e.preventDefault();
         var $form = $( this );
 

@@ -9,6 +9,7 @@ const LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 const routes = require('./routes.js');
 const config = require('./config')
 
+app.use('/public', express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 
 
@@ -34,7 +35,8 @@ passport.use(new LinkedInStrategy({
   clientID: config.linkedinAuth.clientID,
   clientSecret: config.linkedinAuth.clientSecret,
   callbackURL: config.linkedinAuth.callbackURL,
-  scope: ['r_emailaddress', 'r_liteprofile'],
+  scope: ['r_emailaddress', 'r_liteprofile','w_member_social'],
+  
 }, function (token, tokenSecret, profile, done) {
   return done(null, profile);
 }

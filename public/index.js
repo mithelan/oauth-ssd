@@ -18,6 +18,7 @@ $(document).ready(function(){
         +"&access_type=offline";
         window.location = url;
      }
+ 
 });
 
 "use strict";

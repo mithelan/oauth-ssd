@@ -3,6 +3,12 @@ const express = require('express');
 var router = express.Router();
 const validator = require('validator');
 const API = require('./lib/API');
+var path    = require("path");
+const bodyParser = require('body-parser');
+
+router.use('/public', express.static(path.join(__dirname, 'public')));
+router.use(bodyParser.urlencoded({ extended: true}));
+
 
 router.get('/profile', async (req, res) => {
     const isAuthorized =req.session;
@@ -77,12 +83,6 @@ router.post('/publish', async (req, res) => {
         }
     }
 });
-
-// router.get('/profile', checkLogin, function (req, res) {
-//     res.render('pages/profile.ejs', {
-//       user: req.user 
-//     });
-//   });
 
 
 router.get('/auth/linkedin', passport.authenticate('linkedin', {
